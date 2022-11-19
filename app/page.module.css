@@ -1,0 +1,12 @@
+.container {
+  background-image: url("../public/assets/home/background-home-desktop.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  padding-top: 200px;
+}
+
+.main {
+  height: 100%;
+  margin-inline: 165px;
+}

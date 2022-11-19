@@ -1,0 +1,155 @@
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100vw;
+  padding-inline: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.toggle {
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.toggleLine,
+.toggle::before,
+.toggle::after {
+  content: "";
+  width: 1.5rem;
+  height: 3px;
+  display: block;
+  background-color: var(--color-white);
+  margin: 6px 0;
+  transition: 0.5s;
+}
+
+.toggle:not(.toggleOff) > .toggleLine {
+  transform: rotate(45deg);
+}
+
+.toggle:not(.toggleOff):before {
+  transform: translateY(9px) rotate(-45deg);
+}
+
+.toggle:not(.toggleOff):after {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.menu {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(40.7742px);
+  padding-top: 7rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 67vw;
+  height: 100vh;
+  transform: translateX(0);
+  transition: transform ease-in-out 400ms;
+}
+
+.close {
+  transform: translateX(100%);
+}
+
+.navLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navItemContainer {
+  position: relative;
+  padding-block: 2.5rem;
+}
+
+.navItemContainer.selectedItem:after {
+  content: "";
+  background: var(--color-white);
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  right: 0;
+  bottom: 0;
+}
+
+@media (max-width: 35em) {
+  .navItemContainer {
+    padding: 0;
+    margin: 2rem;
+    margin-right: 0;
+  }
+  .navItemContainer.selectedItem:after {
+    width: 4px;
+    height: 31px;
+    right: 0;
+    top: -3.5px;
+  }
+}
+
+.navLinkIndex {
+  font-weight: 700;
+  margin-right: 11px;
+}
+
+.navLinkItem {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+@media (min-width: 35em) {
+  .toggle {
+    display: none;
+  }
+  .menu {
+    position: relative;
+    height: auto;
+    width: auto;
+    transform: translateX(0);
+    padding: 0;
+  }
+  .navBar {
+    padding-inline: 39px 0;
+    padding-top: 0;
+  }
+  .navLinks {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    padding-inline: 2.5rem;
+  }
+}
+
+@media (min-width: 55em) {
+  .navBar {
+    padding-left: 55px;
+    padding-top: 40px;
+  }
+  .navLinks {
+    gap: 3rem;
+    padding-inline: 8vw 10vw;
+  }
+  .navLineContainer {
+    flex: 1;
+    position: relative;
+  }
+  .navLine {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.25);
+    left: 4rem;
+    right: -2rem;
+    z-index: 100;
+    position: absolute;
+  }
+}
+
+@media (min-width: 35em) and (max-width: 55em) {
+  .navLinkIndex {
+    display: none;
+  }
+}
