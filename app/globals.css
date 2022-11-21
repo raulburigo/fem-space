@@ -89,7 +89,7 @@ h1,
 h2,
 h3,
 h4,
-h5,
+.heading-5,
 h6,
 .sub-heading-1,
 .sub-heading-2,
@@ -100,6 +100,7 @@ h6,
 h1 {
   font-size: 150px;
   color: var(--color-white);
+  line-height: 1.15em;
 }
 
 h2 {
@@ -114,9 +115,17 @@ h4 {
   font-size: 2rem;
 }
 
-h5 {
+.heading-5 {
   font-size: 1.75rem;
-  letter-spacing: 4.75px;
+  letter-spacing: 0.17em;
+  line-height: 1.2em;
+  color: #d0d6f9;
+}
+
+.description {
+  font-size: 1.125rem;
+  line-height: 2rem;
+  color: #d0d6f9;
 }
 
 .sub-heading-1 {
@@ -133,22 +142,47 @@ h5 {
   letter-spacing: 0.17em;
 }
 
+@media (max-width: 35em) {
+  h1 {
+    font-size: 5rem;
+    line-height: 1.25em;
+  }
+  .heading-5 {
+    font-size: 1rem;
+  }
+  .description {
+    font-size: 15px;
+    line-height: 25px;
+  }
+}
+
 @media (min-width: 35em) and (max-width: 55em) {
+  h1 {
+    font-size: 150px;
+    line-height: 1em;
+  }
   .nav-text {
     font-size: 0.875rem;
+  }
+  .heading-5 {
+    font-size: 1.25rem;
+  }
+  .description {
+    font-size: 1rem;
+    line-height: 1.75em;
   }
 }
 
 p {
   font-size: 1.125rem;
 }
-
+/* 
 // Next gambis
 [data-nextjs-scroll-focus-boundary] {
   display: contents;
   height: 100%;
   border: 1px solid red;
-}
+} */
 /* 
 * {
   outline: 1px solid red;

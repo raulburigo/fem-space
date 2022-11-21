@@ -3,10 +3,54 @@
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
-  padding-top: 200px;
+  padding-top: 144px;
 }
 
 .main {
   height: 100%;
-  margin-inline: 165px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding-inline: 1.5rem;
+  padding-bottom: 8rem;
+}
+
+@media (max-width: 55em) {
+  .main {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 0;
+  }
+  .container {
+    padding-top: 101px;
+  }
+}
+
+@media (max-width: 35em) {
+  .container {
+    padding-top: 72px;
+    background-image: url("../public/assets/home/background-home-mobile.jpg");
+  }
+}
+
+/* TODO: gaps */
+.top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+@media (min-width: 35em) {
+  .top {
+    width: min-content;
+    gap: 1.5rem;
+  }
+}
+@media (min-width: 55em) {
+  .top {
+    text-align: justify;
+  }
 }

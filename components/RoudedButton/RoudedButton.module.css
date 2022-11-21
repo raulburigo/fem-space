@@ -1,0 +1,38 @@
+.button {
+  border-radius: 50%;
+  color: var(--color-dark);
+  background-color: var(--color-white);
+  line-height: 1.15em;
+  letter-spacing: 0.06em;
+  font-size: 2rem;
+  padding-inline: 2em;
+  aspect-ratio: 1;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  /* position: relative; */
+}
+
+@media (max-width: 35em) {
+  .button {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 55em) {
+  .button {
+    padding-inline: 1.5em;
+  }
+}
+/* 
+.button:hover:before {
+  content: "";
+  position: absolute;
+  height: 160%;
+  width: 160%;
+  background-color: red;
+  top: -30%;
+  left: -30%;
+  border-radius: 50%;
+  z-index: 0;
+} */

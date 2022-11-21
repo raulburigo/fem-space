@@ -1,7 +1,7 @@
 import './globals.css'
 import { Bellefair } from '@next/font/google';
 
-import Navbar from '../components/Navbar';
+import NavBar from '../components/NavBar';
 
 const bellefair = Bellefair({
   weight: "400",
@@ -22,7 +22,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
-        <Navbar />
+        <NavBar />
         <div>{children}</div>
       </body>
     </html>
