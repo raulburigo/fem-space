@@ -22,6 +22,10 @@ export default function Navbar() {
   ]
 
   const pathname = usePathname();
+  const isCurrentRoute = (link: string) => {
+    if (link === '/') return link === pathname
+    return pathname?.includes(link)
+  }
   return <nav className={styles.navBar}>
     <Image src={'/assets/shared/logo.svg'} alt='logo' width={48} height={48}></Image>
     <div className={styles.navLineContainer}><div className={styles.navLine}></div></div>
@@ -31,7 +35,7 @@ export default function Navbar() {
     <div className={`${styles.menu} ${!open && styles.close}`}>
       <ul className={styles.navLinks}>
         {navLinks.map(link => (
-          <li className={`${styles.navItemContainer} nav-text ${pathname === link.link && styles.selectedItem} ${barlow.className}`} key={link.id}>
+          <li className={`${styles.navItemContainer} nav-text ${isCurrentRoute(link.link)  && styles.selectedItem} ${barlow.className}`} key={link.id}>
             <span aria-hidden="true" className={styles.navLinkIndex}>{link.id.toString().padStart(2, '0')}</span>
             <Link className={styles.navLinkItem} href={link.link}>
               {link.label}
