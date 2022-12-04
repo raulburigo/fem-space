@@ -7,14 +7,16 @@ import styles from './BgContainer.module.css'
 export default function BgContainer({children}: PropsWithChildren) {
   const pathname = usePathname();
   const pathContainer = (path: string) => {
-      console.log(path.split('/'))
-      switch (path.split('/')[1]) {
-          case 'destinations':
-              console.log('aqui?')
-              return 'destination'
-          default:
-              return 'home' 
-      }
+    switch (path.split('/')[1]) {
+      case 'destinations':
+        return 'destination'
+      case 'crew':
+        return 'crew'
+      case 'technologies':
+        return 'technology'
+      default:
+        return 'home' 
+    }
   }
 
   return (
