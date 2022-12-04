@@ -1,9 +1,19 @@
 import { Destination } from '../../../types';
 import styles from './page.module.css'
 import Image from 'next/image'
+
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import Selector from '../../../components/Selector';
+import { Barlow_Condensed } from '@next/font/google';
+
+
+const barlow = Barlow_Condensed({
+  weight: '400'
+})
+const barlowBold = Barlow_Condensed({
+  weight: '700'
+})
 
 async function getDestinations(): Promise<Destination[]> {
   const res = await fetch('https://fem-space-orpin.vercel.app/api/destination');
@@ -27,30 +37,43 @@ export default async function Destinations({ params }: {
   
 
   return (
-    <div className={styles.container}>
-      <p> 01 Pick your destination</p>
-      <Selector options={data.map(d => d.name)}/>
-      <p>{details.name.toUpperCase()}</p>
-      <p>{details.description}</p>
-      <Image src={details.images.png} alt={details.name} width={200} height={200}/>
-      <p>AVG. DISTANCE</p>
-      <p>{details.distance.toUpperCase()}</p>
-      <p>EST. TRAVEL TIME</p>
-      <p>{details.travel.toUpperCase()}</p>
+    <div className={styles.main}>
+      <div className={styles.title}>
+        <p className={`heading-5 ${barlow.className}`}>
+          <span className={barlowBold.className}>01</span>
+          Pick your destination
+        </p>
+
+      </div>
+      <div className={styles.detailsContainer}>
+        <div className={styles.imageContainer}>
+          <Image
+            src={details.images.png}
+            alt={`Picture of the ${details.name}`}
+            fill
+            style={{zIndex: 1}}
+            sizes="(min-width: 35em) 300px,
+              (min-width: 55em) 445px,
+              170px"
+          />
+        </div>
+        <div className={styles.details}>
+          <Selector options={data.map(d => d.name)}/>
+          <h2>{details.name.toUpperCase()}</h2>
+          <p className='description'>{details.description}</p>
+          <div className={styles.travelInfoContainer}>
+            <div >
+              <p className={`${barlow.className} ${styles.travelInfoLabel}`}>AVG. DISTANCE</p>
+              <p className={styles.travelInfo}>{details.distance}</p>
+            </div>
+            <div>
+              <p className={`${barlow.className} ${styles.travelInfoLabel}`}>EST. TRAVEL TIME</p>
+              <p className={styles.travelInfo}>{details.travel}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    
   )
 }
-
-
-/* Catch-all and Optional Catch-all Segments
-Dynamic Segments can be extended to catch-all by adding an ellipsis inside the brackets [...folderName].
-
-For example, app/blog/[...slug]/page.js can match /blog/a, but also /blog/a/b, /blog/a/b/c, and so on.
-
-Catch-all Segments can be made optional by including the parameter in double square brackets: [[...folderName]].
-
-For example, app/blog/[[...slug]]/page.js will match /blog, /blog/a, /blog/a/b, and so on.
-
-The main difference between catch-all and optional catch-all segment is that with optional, the route without the parameter is also matched (/blog in the example above).
-
- */

@@ -1,13 +1,5 @@
-.container {
-  background-image: url("../public/assets/home/background-home-desktop.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-  padding-top: 144px;
-}
-
 .main {
-  height: 100%;
+  height: calc(100vh - 144px);
   display: flex;
   align-items: flex-end;
   justify-content: space-around;

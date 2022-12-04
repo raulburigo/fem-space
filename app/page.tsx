@@ -15,7 +15,7 @@ export default async function Home() {
 
 
   return (
-    <div className={styles.container}>
+    // <div className={styles.container}>
       <main className={styles.main}>
         <div className={styles.top}>
           <p className={`heading-5 ${barlow.className}`}>So, you want to travel to</p>
@@ -30,6 +30,6 @@ export default async function Home() {
         </div>
         <RoudedButton title='EXPLORE'/>
       </main>
-    </div>
+    // </div>
   )
 }

@@ -1,0 +1,14 @@
+.container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  padding-top: 144px;
+}
+
+.home {
+  background-image: url("/assets/home/background-home-desktop.jpg");
+}
+
+.destination {
+  background-image: url("/assets/destination/background-destination-desktop.jpg");
+}

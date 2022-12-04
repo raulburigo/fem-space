@@ -1,12 +1,109 @@
-.container {
-  /* background-image: url("../public/assets/home/background-home-desktop.jpg");
-  background-size: cover;
-  background-repeat: no-repeat; */
-  height: 100vh;
-  padding-top: 200px;
+.main {
+  height: calc(100vh - 144px);
+  display: flex;
+  flex-direction: column;
 }
 
-.main {
-  height: 100%;
-  margin-inline: 165px;
+.title {
+  margin: 76px 10vw 64px 10vw;
+}
+
+.title > p {
+  color: var(--color-white);
+  text-transform: uppercase;
+}
+
+.title span {
+  opacity: 0.25;
+  margin-right: 1em;
+}
+
+.details {
+  max-width: max(450px, 30vw);
+}
+
+.detailsContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 10vw;
+  margin: 0 10vw 120px 14vw;
+}
+
+.imageContainer {
+  position: relative;
+  width: 445px;
+  aspect-ratio: 1;
+}
+
+.travelInfoContainer {
+  margin-top: 54px;
+  padding-top: 28px;
+  border-top: 1px solid #383b4b;
+  display: flex;
+  gap: 5rem;
+}
+
+.travelInfo {
+  font-size: 1.75rem;
+  line-height: 2rem;
+  color: var(--color-white);
+  text-transform: uppercase;
+}
+.travelInfoLabel {
+  font-size: 0.875rem;
+  letter-spacing: 0.17em;
+  line-height: 1.2em;
+  text-transform: uppercase;
+  color: #d0d6f9;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 35em) {
+  .imageContainer {
+    width: 170px;
+  }
+  .detailsContainer {
+    gap: 26px;
+  }
+  .travelInfoContainer {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .travelInfo {
+    text-align: center;
+  }
+  .travelInfoLabel {
+    text-align: center;
+  }
+}
+
+@media (max-width: 55em) {
+  .detailsContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 53px;
+  }
+  .details {
+    flex: 1;
+    align-items: center;
+    text-align: center;
+  }
+  .imageContainer {
+    width: 300px;
+  }
+  .travelInfoContainer {
+    margin-block: 49px;
+    padding-top: 29px;
+    justify-content: space-evenly;
+  }
+}
+
+@media (min-width: 35em) and (max-width: 55em) {
+  .travelInfoContainer {
+    gap: 0;
+  }
 }

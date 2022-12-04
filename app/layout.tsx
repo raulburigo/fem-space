@@ -2,6 +2,7 @@ import './globals.css'
 import { Bellefair } from '@next/font/google';
 
 import NavBar from '../components/NavBar';
+import BgContainer from '../components/BgContainer';
 
 const bellefair = Bellefair({
   weight: "400",
@@ -23,7 +24,9 @@ export default function RootLayout({
       </head>
       <body>
         <NavBar />
-        <div>{children}</div>
+        <BgContainer>
+          {children}
+        </BgContainer>
       </body>
     </html>
   )
